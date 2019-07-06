@@ -1,0 +1,132 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark blue" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">HEMSONS</a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+    <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+          </div>
+        </li>
+
+      </ul>
+      <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+
+  </mdb-navbar>
+  <!--/.Navbar-->
+
+
+
+<div class="container">
+  <div class="row mt-5 justify-content-md-center">
+    <div class="col-md-8">
+      <form>
+
+        <div class="form-row">
+          <div class="col-8">
+            <div class="md-form">
+              <select class="browser-default custom-select">
+                <option selected disabled hidden>Select Potato Type</option>
+                <option *ngFor="let potatoType of potatoTypes" [value]="potatoType._id">
+                  {{ potatoType.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="md-form">
+              <input type="number" class="form-control" id="quntity" mdbInput>
+              <label for="quantity">Quantity</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12">
+            <div class="md-form">
+              <input type="text" class="form-control" id="name" mdbInput>
+              <label for="name">Your Name</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12">
+            <div class="md-form">
+              <input mdbInput type="text" class="form-control" id="inputAddress">
+              <label for="inputAddress">Address</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <!-- Grid column -->
+          <div class="col-5">
+            <!-- Material input -->
+            <div class="md-form">
+              <input mdbInput type="text" id="city" class="form-control">
+              <label for="city">City</label>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col">
+            <!-- Material input -->
+            <div class="md-form">
+              <input mdbInput type="text" id="state" class="form-control">
+              <label for="state">State</label>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col">
+            <!-- Material input -->
+            <div class="md-form">
+              <input mdbInput type="text" id="zip" class="form-control">
+              <label for="zip">ZIP</label>
+            </div>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <button type="submit" class="btn btn-primary btn-md">Add Quote</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue fixed-bottom">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href=""> HEMSONS</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
