@@ -1,0 +1,72 @@
+<form>
+
+  <div class="form-row">
+    <div class="col-8">
+      <div class="md-form">
+        <select class="browser-default custom-select">
+          <option selected disabled hidden>Select Potato Type</option>
+          <option *ngFor="let potatoType of potatoTypes" [value]="potatoType._id">
+            {{ potatoType.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="md-form">
+        <input type="number" class="form-control" id="quntity" mdbInput>
+        <label for="quantity">Quantity</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-12">
+      <div class="md-form">
+        <input type="text" class="form-control" id="name" mdbInput>
+        <label for="name">Your Name</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-12">
+      <div class="md-form">
+        <input mdbInput type="text" class="form-control" id="inputAddress">
+        <label for="inputAddress">Address</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <!-- Grid column -->
+    <div class="col-5">
+      <!-- Material input -->
+      <div class="md-form">
+        <input mdbInput type="text" id="city" class="form-control">
+        <label for="city">City</label>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col">
+      <!-- Material input -->
+      <div class="md-form">
+        <input mdbInput type="text" id="state" class="form-control">
+        <label for="state">State</label>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col">
+      <!-- Material input -->
+      <div class="md-form">
+        <input mdbInput type="text" id="zip" class="form-control">
+        <label for="zip">ZIP</label>
+      </div>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <button type="submit" class="btn btn-primary btn-md">Add Quote</button>
+</form>

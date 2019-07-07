@@ -1,36 +1,28 @@
 var express = require('express');
-var cors = require('cors');
-var mongoose = require('mongoose');
-var bodyparser = require('body-parser');
-
-var path = require('path');
-
 var app = express();
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var path = require('path');
+// const jwt = require('_helpers/jwt');
+const errorHandler = require('./_helpers/error-handler');
 
-mongoose.connect("mongodb://Rudar:Rudardaman1@ds155616.mlab.com:55616/potato", {useNewUrlParser: true})
-.then(() => {
-    console.log('Connected to db');
-})
-.catch(() => {
-    console.log('Connection failed!!');
-});
-
-const route = require('./routes/route');
-
-//Port 
+//Port
 const port = 3000;
 
 //adding middleware - cors
 app.use(cors());
 
 //body parser
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', route);
+app.use('/api/potato/type', require('./potato/potato-type/potato-type.controller'));
+app.use('/api/users', require('./users/user.controller'));
+
+app.use(errorHandler);
 
 //Testing Server
 app.get('/', (req, res) => {

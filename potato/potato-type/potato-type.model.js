@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
 
 const potatoTypeSchema = mongoose.Schema({
-    name: { 
-        type: String, 
-        required: true 
+    name: {
+        type: String,
+        unique: true,
+        required: true
     },
-    timestamp: { 
-        type: String, 
-        required: true 
+    timestamp: {
+        type: Date,
+        default: Date.now
     }
 });
 
